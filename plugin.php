@@ -2,13 +2,13 @@
 
 /**
  * Plugin Name: Mistral AI Provider
- * Plugin URI: https://github.com/WordPress/mistral-ai-provider
+ * Plugin URI: https://github.com/saarnilauri/wp-mistral-ai-provider
  * Description: Mistral AI provider for the WordPress AI Client.
  * Requires at least: 6.9
  * Requires PHP: 7.4
  * Version: 1.0.0
- * Author: WordPress AI Team
- * Author URI: https://make.wordpress.org/ai/
+ * Author: Lauri Saarni
+ * Author URI: https://profiles.wordpress.org/laurisaarni/
  * License: GPL-2.0-or-later
  * License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
  * Text Domain: mistral-ai-provider
