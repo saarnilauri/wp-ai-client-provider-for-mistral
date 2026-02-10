@@ -4,6 +4,8 @@
 /.distignore
 /composer.json
 /composer.lock
+/Makefile
 /phpcs.xml.dist
 /phpstan.neon.dist
+/scripts
 /vendor
