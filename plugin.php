@@ -6,7 +6,7 @@
  * Description: Mistral AI provider for the WordPress AI Client.
  * Requires at least: 6.9
  * Requires PHP: 7.4
- * Version: 0.1.2
+ * Version: 0.1.3
  * Author: Lauri Saarni
  * Author URI: https://profiles.wordpress.org/laurisaarni/
  * License: GPL-2.0-or-later
@@ -28,9 +28,28 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Loads all plugin class files.
+ *
+ * Since this plugin may be installed without Composer, classes
+ * are loaded manually instead of relying on an autoloader.
+ *
+ * @since 0.1.3
+ *
+ * @return void
+ */
+function load_classes(): void
+{
+    $plugin_dir = __DIR__ . '/src';
+
+    require_once $plugin_dir . '/Metadata/MistralModelMetadataDirectory.php';
+    require_once $plugin_dir . '/Models/MistralTextGenerationModel.php';
+    require_once $plugin_dir . '/Provider/MistralProvider.php';
+}
+
+/**
  * Registers the Mistral AI provider with the AI Client.
  *
- * @since 1.0.0
+ * @since 0.1.1
  *
  * @return void
  */
@@ -39,6 +58,8 @@ function register_provider(): void
     if (!class_exists(AiClient::class)) {
         return;
     }
+
+    load_classes();
 
     $registry = AiClient::defaultRegistry();
 
