@@ -7,5 +7,8 @@
 /Makefile
 /phpcs.xml.dist
 /phpstan.neon.dist
+/phpunit.xml.dist
+/phpunit-integration.xml.dist
 /scripts
+/tests
 /vendor

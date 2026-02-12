@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WpMistralProvider\Metadata;
+namespace WpAiClientProviderForMistral\Metadata;
 
 use WordPress\AiClient\Messages\Enums\ModalityEnum;
 use WordPress\AiClient\Providers\Http\DTO\Request;
@@ -14,10 +14,10 @@ use WordPress\AiClient\Providers\Models\DTO\SupportedOption;
 use WordPress\AiClient\Providers\Models\Enums\CapabilityEnum;
 use WordPress\AiClient\Providers\Models\Enums\OptionEnum;
 use WordPress\AiClient\Providers\OpenAiCompatibleImplementation\AbstractOpenAiCompatibleModelMetadataDirectory;
-use WpMistralProvider\Provider\MistralProvider;
+use WpAiClientProviderForMistral\Provider\ProviderForMistral;
 
 /**
- * Class for the Mistral model metadata directory.
+ * Class for the model metadata directory used by the provider for Mistral.
  *
  * @since 1.0.0
  *
@@ -36,7 +36,7 @@ use WpMistralProvider\Provider\MistralProvider;
  *     data?: list<ModelData>
  * }|list<ModelData>
  */
-class MistralModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDirectory
+class ProviderForMistralModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadataDirectory
 {
     /**
      * {@inheritDoc}
@@ -47,7 +47,7 @@ class MistralModelMetadataDirectory extends AbstractOpenAiCompatibleModelMetadat
     {
         return new Request(
             $method,
-            MistralProvider::url($path),
+            ProviderForMistral::url($path),
             $headers,
             $data
         );

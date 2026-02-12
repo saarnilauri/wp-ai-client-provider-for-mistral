@@ -1,2 +1,9 @@
 /vendor/
 /dist/
+
+.phpunit.cache/
+
+.claude
+.codex
+
+.env

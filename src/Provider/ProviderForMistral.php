@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WpMistralProvider\Provider;
+namespace WpAiClientProviderForMistral\Provider;
 
 use WordPress\AiClient\Common\Exception\RuntimeException;
 use WordPress\AiClient\Providers\ApiBasedImplementation\AbstractApiProvider;
@@ -14,15 +14,15 @@ use WordPress\AiClient\Providers\Enums\ProviderTypeEnum;
 use WordPress\AiClient\Providers\Http\Enums\RequestAuthenticationMethod;
 use WordPress\AiClient\Providers\Models\Contracts\ModelInterface;
 use WordPress\AiClient\Providers\Models\DTO\ModelMetadata;
-use WpMistralProvider\Metadata\MistralModelMetadataDirectory;
-use WpMistralProvider\Models\MistralTextGenerationModel;
+use WpAiClientProviderForMistral\Metadata\ProviderForMistralModelMetadataDirectory;
+use WpAiClientProviderForMistral\Models\ProviderForMistralTextGenerationModel;
 
 /**
- * Class for the Mistral provider.
+ * Class for the WordPress AI Client provider for Mistral.
  *
  * @since 1.0.0
  */
-class MistralProvider extends AbstractApiProvider
+class ProviderForMistral extends AbstractApiProvider
 {
     /**
      * {@inheritDoc}
@@ -46,7 +46,7 @@ class MistralProvider extends AbstractApiProvider
         $capabilities = $modelMetadata->getSupportedCapabilities();
         foreach ($capabilities as $capability) {
             if ($capability->isTextGeneration()) {
-                return new MistralTextGenerationModel($modelMetadata, $providerMetadata);
+                return new ProviderForMistralTextGenerationModel($modelMetadata, $providerMetadata);
             }
         }
 
@@ -64,7 +64,7 @@ class MistralProvider extends AbstractApiProvider
     {
         return new ProviderMetadata(
             'mistral',
-            'Mistral',
+            'WordPress AI Client Provider for Mistral',
             ProviderTypeEnum::cloud(),
             'https://console.mistral.ai/api-keys',
             RequestAuthenticationMethod::apiKey()
@@ -91,6 +91,6 @@ class MistralProvider extends AbstractApiProvider
      */
     protected static function createModelMetadataDirectory(): ModelMetadataDirectoryInterface
     {
-        return new MistralModelMetadataDirectory();
+        return new ProviderForMistralModelMetadataDirectory();
     }
 }

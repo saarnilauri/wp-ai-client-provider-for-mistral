@@ -8,5 +8,8 @@ plugin.php export-ignore
 /.distignore export-ignore
 /phpcs.xml.dist export-ignore
 /phpstan.neon.dist export-ignore
+/phpunit.xml.dist export-ignore
+/phpunit-integration.xml.dist export-ignore
 /Makefile export-ignore
 /scripts export-ignore
+/tests export-ignore

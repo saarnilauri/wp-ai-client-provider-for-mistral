@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Plugin Name: Mistral AI Provider
- * Plugin URI: https://github.com/saarnilauri/wp-mistral-ai-provider
- * Description: Mistral AI provider for the WordPress AI Client.
+ * Plugin Name: WordPress AI Client Provider for Mistral
+ * Plugin URI: https://github.com/saarnilauri/wp-ai-client-provider-for-mistral
+ * Description: Independent WordPress AI Client provider for Mistral.
  * Requires at least: 6.9
  * Requires PHP: 7.4
  * Version: 0.1.3
@@ -11,17 +11,17 @@
  * Author URI: https://profiles.wordpress.org/laurisaarni/
  * License: GPL-2.0-or-later
  * License URI: https://spdx.org/licenses/GPL-2.0-or-later.html
- * Text Domain: mistral-ai-provider
+ * Text Domain: wp-ai-client-provider-for-mistral
  *
- * @package WpMistralProvider
+ * @package WpAiClientProviderForMistral
  */
 
 declare(strict_types=1);
 
-namespace WpMistralProvider;
+namespace WpAiClientProviderForMistral;
 
 use WordPress\AiClient\AiClient;
-use WpMistralProvider\Provider\MistralProvider;
+use WpAiClientProviderForMistral\Provider\ProviderForMistral;
 
 if (!defined('ABSPATH')) {
     return;
@@ -41,13 +41,13 @@ function load_classes(): void
 {
     $plugin_dir = __DIR__ . '/src';
 
-    require_once $plugin_dir . '/Metadata/MistralModelMetadataDirectory.php';
-    require_once $plugin_dir . '/Models/MistralTextGenerationModel.php';
-    require_once $plugin_dir . '/Provider/MistralProvider.php';
+    require_once $plugin_dir . '/Metadata/ProviderForMistralModelMetadataDirectory.php';
+    require_once $plugin_dir . '/Models/ProviderForMistralTextGenerationModel.php';
+    require_once $plugin_dir . '/Provider/ProviderForMistral.php';
 }
 
 /**
- * Registers the Mistral AI provider with the AI Client.
+ * Registers the WordPress AI Client provider for Mistral.
  *
  * @since 0.1.1
  *
@@ -63,11 +63,11 @@ function register_provider(): void
 
     $registry = AiClient::defaultRegistry();
 
-    if ($registry->hasProvider(MistralProvider::class)) {
+    if ($registry->hasProvider(ProviderForMistral::class)) {
         return;
     }
 
-    $registry->registerProvider(MistralProvider::class);
+    $registry->registerProvider(ProviderForMistral::class);
 }
 
 add_action('init', __NAMESPACE__ . '\\register_provider', 5);
