@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace WpMistralProvider\Models;
+namespace WpAiClientProviderForMistral\Models;
 
 use WordPress\AiClient\Providers\Http\DTO\Request;
 use WordPress\AiClient\Providers\Http\Enums\HttpMethodEnum;
 use WordPress\AiClient\Providers\OpenAiCompatibleImplementation\AbstractOpenAiCompatibleTextGenerationModel;
-use WpMistralProvider\Provider\MistralProvider;
+use WpAiClientProviderForMistral\Provider\ProviderForMistral;
 
 /**
- * Class for a Mistral text generation model.
+ * Class for text generation models used by the provider for Mistral.
  *
  * @since 1.0.0
  */
-class MistralTextGenerationModel extends AbstractOpenAiCompatibleTextGenerationModel
+class ProviderForMistralTextGenerationModel extends AbstractOpenAiCompatibleTextGenerationModel
 {
     /**
      * {@inheritDoc}
@@ -29,7 +29,7 @@ class MistralTextGenerationModel extends AbstractOpenAiCompatibleTextGenerationM
     ): Request {
         return new Request(
             $method,
-            MistralProvider::url($path),
+            ProviderForMistral::url($path),
             $headers,
             $data,
             $this->getRequestOptions()

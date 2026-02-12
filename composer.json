@@ -1,6 +1,6 @@
 {
-    "name": "saarnilauri/wp-mistral-ai-provider",
-    "description": "Mistral AI provider for the PHP AI Client SDK. Works as both a Composer package and WordPress plugin.",
+    "name": "saarnilauri/wp-ai-client-provider-for-mistral",
+    "description": "Independent WordPress AI Client provider for Mistral. Works as both a Composer package and WordPress plugin.",
     "license": "GPL-2.0-or-later",
     "type": "wordpress-plugin",
     "keywords": [
@@ -15,10 +15,10 @@
             "homepage": "https://profiles.wordpress.org/laurisaarni/"
         }
     ],
-    "homepage": "https://github.com/saarnilauri/wp-mistral-ai-provider",
+    "homepage": "https://github.com/saarnilauri/wp-ai-client-provider-for-mistral",
     "support": {
-        "issues": "https://github.com/saarnilauri/wp-mistral-ai-provider/issues",
-        "source": "https://github.com/saarnilauri/wp-mistral-ai-provider"
+        "issues": "https://github.com/saarnilauri/wp-ai-client-provider-for-mistral/issues",
+        "source": "https://github.com/saarnilauri/wp-ai-client-provider-for-mistral"
     },
     "require": {
         "php": ">=7.4"
@@ -38,7 +38,12 @@
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
-            "WpMistralProvider\\": "src/"
+            "WpAiClientProviderForMistral\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WpAiClientProviderForMistral\\Tests\\": "tests/"
         }
     },
     "config": {

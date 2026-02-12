@@ -1,4 +1,4 @@
-=== Mistral AI Provider ===
+=== WordPress AI Client Provider for Mistral ===
 Contributors: WordPress AI Team
 Tags: ai, mistral, machine-learning, artificial-intelligence
 Requires at least: 6.9
@@ -8,11 +8,12 @@ Requires PHP: 7.4
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Mistral provider for the PHP AI Client SDK.
+Independent WordPress AI Client provider for Mistral.
 
 == Description ==
 
-This plugin provides Mistral integration for the PHP AI Client SDK. It enables WordPress sites to use Mistral models for text generation and related AI capabilities.
+This plugin provides a third-party Mistral integration for the PHP AI Client SDK. It enables WordPress sites to use Mistral models for text generation and related AI capabilities.
+It is not affiliated with, endorsed by, or sponsored by Mistral AI.
 
 **Features:**
 
@@ -32,7 +33,7 @@ Available models are dynamically discovered from the Mistral API.
 == Installation ==
 
 1. Ensure the PHP AI Client plugin is installed and activated
-2. Upload the plugin files to `/wp-content/plugins/wp-mistral-ai-provider/`
+2. Upload the plugin files to `/wp-content/plugins/wp-ai-client-provider-for-mistral/`
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Configure your Mistral API key via the `MISTRAL_API_KEY` environment variable or constant
 
